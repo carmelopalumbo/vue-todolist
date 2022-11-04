@@ -22,6 +22,7 @@ createApp(
     
             return{
                 logo: 'assets/img/logo.png',
+
                 tasks: [
                     {
                         text: 'Fare la spesa',
@@ -37,13 +38,21 @@ createApp(
                         text: 'Ripassare Bootstrap',
                         done: false
                     }
-                ]
+                ],
+
+                textErrorMsg: 'Messaggio di errore!'
             }
             
         },
 
         methods: { 
-
+            deleteTask(index){
+                if(!this.tasks[index].done){
+                    this.textErrorMsg = 'Devi completare la task prima di poterla rimuovere!';
+                    return
+                }
+                this.tasks.splice(index, 1);
+            }
         },
 
         mounted(){

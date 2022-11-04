@@ -44,19 +44,24 @@
 
             <!-- messaggio di errore -->
             <div class="alert alert-danger text-center fw-bold" role="alert">
-                &#9940; Messaggio di errore!
+                &#9940; {{textErrorMsg}}
               </div>
               
             <ul class="list-group">
                 
                 <li 
                 class="list-group-item d-flex justify-content-between py-3 my-2"
-                v-for="task in tasks">
+                v-for="(task, index) in tasks">
                     <span 
                     class="fs-5 fst-italic"
                     :class="{'text-decoration-line-through' : task.done}"
                     @click="task.done = !task.done">{{task.text}}</span>
-                    <button type="button" class="btn-close" aria-label="Close"></button>
+                    
+                    <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    @click="deleteTask(index)"></button>
                 </li>
 
               </ul>
