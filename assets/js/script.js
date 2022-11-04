@@ -29,7 +29,7 @@ createApp(
                     },
 
                     {
-                        text: 'Andare dal barbiere',
+                        text: 'Imparare React',
                         done: false
                     },
 
@@ -39,7 +39,7 @@ createApp(
                     }
                 ],
 
-                textErrorMsg: 'Messaggio di errore!',
+                textErrorMsg: '',
                 newTaskText: ''
             }
             
@@ -50,7 +50,7 @@ createApp(
             deleteTask(index){
                 if(!this.tasks[index].done){
                     this.textErrorMsg = 'Devi completare la task prima di poterla rimuovere!';
-                    return 0;
+                    return
                 }
                 this.tasks.splice(index, 1);
                 this.textErrorMsg = '';
@@ -59,7 +59,7 @@ createApp(
             addTask(){
 
                 if(this.newTaskText.length < 5){
-                    this.textErrorMsg = 'Task troppo corta! Lunghezza minima 5 caratteri';
+                    this.textErrorMsg = 'Task troppo corta! Lunghezza minima 5 caratteri.';
                     return
                 }
 
@@ -67,7 +67,7 @@ createApp(
 
                 this.tasks.forEach(task => {
                     if(task.text === this.newTaskText){
-                        this.textErrorMsg = 'Task giá presente nella lista!'
+                        this.textErrorMsg = 'Task giá presente nella lista!';
                         checkText = true;
                     }
                 })
@@ -79,6 +79,7 @@ createApp(
                     };
                     this.tasks.unshift(tempTask);
                     this.textErrorMsg = '';
+                    this.newTaskText = '';
                 }
             }
         },

@@ -47,7 +47,10 @@
         <div class="row mt-4">
 
             <!-- messaggio di errore -->
-            <div class="alert alert-danger text-center fw-bold" role="alert">
+            <div 
+            class="alert alert-danger text-center fw-bold" 
+            role="alert"
+            v-if="textErrorMsg">
                 &#9940; {{textErrorMsg}}
               </div>
               
@@ -72,7 +75,10 @@
         </div>
 
         <!-- nessuna task presente -->
-        <div class="alert alert-success text-center fw-bold" role="alert">
+        <div 
+        class="alert alert-success text-center fw-bold" 
+        role="alert"
+        v-if="tasks.length === 0">
            Non ci sono task presenti. &nbsp;Aggiungine una! &#8987;
           </div>
           
