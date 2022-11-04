@@ -21,7 +21,23 @@ createApp(
         data(){
     
             return{
-    
+                logo: 'assets/img/logo.png',
+                tasks: [
+                    {
+                        text: 'Fare la spesa',
+                        done: false
+                    },
+
+                    {
+                        text: 'Andare dal barbiere',
+                        done: false
+                    },
+
+                    {
+                        text: 'Ripassare Bootstrap',
+                        done: false
+                    }
+                ]
             }
             
         },

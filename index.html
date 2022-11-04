@@ -27,7 +27,7 @@
     <div class="container cp_container" id="app">
 
         <!-- logo -->
-        <img src="assets/img/logo.png" alt="Logo">
+        <img :src="logo" alt="logo">
 
         <!-- aggiungi task -->
         <div class="row m-auto">
@@ -49,23 +49,13 @@
               
             <ul class="list-group">
                 
-                <li class="list-group-item d-flex justify-content-between py-3 my-2">
-                    <span class="fs-5 fst-italic">Mia task</span>
-                    <button type="button" class="btn-close" aria-label="Close"></button>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between py-3 my-2">
-                    <span class="fs-5 fst-italic">Mia task</span>
-                    <button type="button" class="btn-close" aria-label="Close"></button>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between py-3 my-2">
-                    <span class="fs-5 fst-italic">Mia task</span>
-                    <button type="button" class="btn-close" aria-label="Close"></button>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between py-3 my-2">
-                    <span class="fs-5 fst-italic">Mia task</span>
+                <li 
+                class="list-group-item d-flex justify-content-between py-3 my-2"
+                v-for="task in tasks">
+                    <span 
+                    class="fs-5 fst-italic"
+                    :class="{'text-decoration-line-through' : task.done}"
+                    @click="task.done = !task.done">{{task.text}}</span>
                     <button type="button" class="btn-close" aria-label="Close"></button>
                 </li>
 
@@ -78,7 +68,7 @@
           </div>
           
     </div>
-    
+
     <!-- SCRIPT JS -->
     <script src="assets/js/script.js"></script>
 </body>
