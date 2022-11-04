@@ -19,7 +19,6 @@ const { createApp } = Vue;
 createApp(
     {
         data(){
-    
             return{
                 logo: 'assets/img/logo.png',
 
@@ -40,18 +39,47 @@ createApp(
                     }
                 ],
 
-                textErrorMsg: 'Messaggio di errore!'
+                textErrorMsg: 'Messaggio di errore!',
+                newTaskText: ''
             }
             
         },
 
         methods: { 
+
             deleteTask(index){
                 if(!this.tasks[index].done){
                     this.textErrorMsg = 'Devi completare la task prima di poterla rimuovere!';
-                    return
+                    return 0;
                 }
                 this.tasks.splice(index, 1);
+                this.textErrorMsg = '';
+            },
+
+            addTask(){
+
+                if(this.newTaskText.length < 5){
+                    this.textErrorMsg = 'Task troppo corta! Lunghezza minima 5 caratteri';
+                    return
+                }
+
+                let checkText = false;
+
+                this.tasks.forEach(task => {
+                    if(task.text === this.newTaskText){
+                        this.textErrorMsg = 'Task giá presente nella lista!'
+                        checkText = true;
+                    }
+                })
+
+                if(!checkText){
+                    const tempTask = {
+                        text: this.newTaskText,
+                        done: false
+                    };
+                    this.tasks.unshift(tempTask);
+                    this.textErrorMsg = '';
+                }
             }
         },
 

@@ -32,10 +32,14 @@
         <!-- aggiungi task -->
         <div class="row m-auto">
             <div class="col-9">
-                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Nuova task. . .">
+                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Nuova task. . ."
+                v-model.trim="newTaskText">
             </div>
             <div class="col-3">
-                <button type="submit" class="btn btn-success mb-3">Aggiungi</button>
+                <button 
+                type="submit" 
+                class="btn btn-success mb-3"
+                @click="addTask()">Aggiungi</button>
             </div>
         </div>
 
