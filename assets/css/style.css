@@ -19,6 +19,11 @@ img{
     margin: 50px auto;
 }
 
-span{
+ul li{
+    transition: all .5s;
+}
+
+ul li:hover{
+    background-color: lightgray;
     cursor: pointer;
 }
