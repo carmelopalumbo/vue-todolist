@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+
     <!-- CDN BOOTSRAP -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.css' integrity='sha512-+QrNe4Kul4TNKwDK+EJM71C9z5I9I/iYLEIJPYTfmXouMSU8tkayWYnOsAKjDAaOOH21+MS747IPTYcD+2euuQ==' crossorigin='anonymous'/>
 
@@ -13,11 +18,57 @@
 
     <!-- CSS LINK -->
     <link rel="stylesheet" href="assets/css/style.css">
+
     <title>To-Do List</title>
 </head>
-<body>
-    
 
+<body>
+
+    <div class="container cp_container">
+        <img src="assets/img/logo.png" alt="Logo">
+
+        <!-- aggiungi task -->
+        <div class="row m-auto">
+            <div class="col-9">
+                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Nuova task. . .">
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-success mb-3">Aggiungi</button>
+            </div>
+        </div>
+
+        <!-- task inserite -->
+        <div class="row mt-4">
+            <ul class="list-group">
+                
+                <li class="list-group-item d-flex justify-content-between py-3 my-2">
+                    <span class="fs-5 fst-italic">Mia task</span>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between py-3 my-2">
+                    <span class="fs-5 fst-italic">Mia task</span>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between py-3 my-2">
+                    <span class="fs-5 fst-italic">Mia task</span>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between py-3 my-2">
+                    <span class="fs-5 fst-italic">Mia task</span>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </li>
+
+              </ul>
+        </div>
+
+        <div class="alert alert-success text-center fw-bold" role="alert">
+           Non ci sono task presenti. &nbsp;Aggiungine una! &#8987;
+          </div>
+          
+    </div>
     <!-- SCRIPT JS -->
     <script src="assets/js/script.js"></script>
 </body>
