@@ -68,7 +68,7 @@
                 v-for="(task, index) in tasks">
                     <span 
                     class="fs-5 fst-italic"
-                    :class="{'text-decoration-line-through' : task.done}"
+                    :class="{'text-decoration-line-through fst-normal' : task.done}"
                     @click="task.done = !task.done">{{task.text}}</span>
                     
                     <button
