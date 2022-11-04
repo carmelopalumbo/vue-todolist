@@ -40,7 +40,7 @@ createApp(
                 ],
 
                 textErrorMsg: '',
-                newTaskText: ''
+                newTaskText: '',
             }
             
         },
