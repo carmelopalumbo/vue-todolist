@@ -48,7 +48,10 @@ createApp(
             // aggiunge nuova task
             addTask(){
 
-                if(this.newTaskText.length === 0) return;
+                if(this.newTaskText.length === 0){
+                    this.textErrorMsg = '';
+                    return;
+                }
 
                 if(this.newTaskText.length < 5){
                     this.textErrorMsg = 'Task troppo corta! Lunghezza minima 5 caratteri.';
